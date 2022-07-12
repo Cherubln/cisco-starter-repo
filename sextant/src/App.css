@@ -59,3 +59,18 @@ body {
     flex-direction: column;
   }
 }
+.ip-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.75em;
+}
+.ip-address {
+  padding: 0.625em;
+  border-radius: 10px;
+  background-color: var(--primary-color);
+  color: #f6f6f6;
+  font-size: 0.85em;
+  font-style: italic;
+  font-weight: bold;
+}
