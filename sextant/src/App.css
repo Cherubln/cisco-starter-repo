@@ -1,38 +1,48 @@
-.App {
-  text-align: center;
+:root {
+  --primary-color: #4d4d4d;
+  --main-bg-color: #e6e6e6;
+  --service-bg-color: #fff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  color: var(--primary-color);
+  font-size: 1rem;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.banner {
+  background-color: var(--main-bg-color);
+  height: 12vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 0.625em;
 }
 
-.App-link {
-  color: #61dafb;
+.services {
+  background-color: var(--main-bg-color);
+  margin: 1.2em;
+  border: 1px solid transparent;
+  border-radius: 0.625em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  min-height: calc(
+    100vh - 12vh - 2.4em
+  ); /* device height substructing banner height and margins */
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.services-title {
+  text-align: center;
+  margin: 1.2em;
+  grid-column: 1 / span 3;
+}
+.service {
+  background-color: var(--service-bg-color);
+  color: var(--primary-color);
+  grid-column: 2;
+  text-align: center;
+  border-radius: 0.625em;
+  padding: 1.2em;
 }
