@@ -1,7 +1,8 @@
-function SingleService() {
+function SingleService({ name, children }) {
   return (
     <div className="service">
-      <h3>Service name</h3>
+      <h3 className="service-title">{name}</h3>
+      <div className="service-content">{children}</div>
     </div>
   );
 }

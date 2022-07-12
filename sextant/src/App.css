@@ -13,14 +13,21 @@ body {
   color: var(--primary-color);
   font-size: 1rem;
 }
+
+/* ---BANNER--- */
 .banner {
+  margin: 0.625em;
+  border-radius: 0.625em;
   background-color: var(--main-bg-color);
   height: 12vh;
   display: flex;
   align-items: center;
   padding: 0.625em;
 }
-
+.banner h1 {
+  margin: 0 auto;
+}
+/* ---SERVICES--- */
 .services {
   background-color: var(--main-bg-color);
   margin: 1.2em;
@@ -28,21 +35,27 @@ body {
   border-radius: 0.625em;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  min-height: calc(
-    100vh - 12vh - 2.4em
-  ); /* device height substructing banner height and margins */
+  grid-template-rows: 1fr 1fr;
 }
-.services-title {
-  text-align: center;
-  margin: 1.2em;
-  grid-column: 1 / span 3;
-}
+
 .service {
   background-color: var(--service-bg-color);
   color: var(--primary-color);
-  grid-column: 2;
-  text-align: center;
   border-radius: 0.625em;
   padding: 1.2em;
+  margin: 1em 0.625em;
+}
+.service-title {
+  text-align: center;
+  text-transform: uppercase;
+}
+.service-content {
+  margin: 0.625em;
+}
+
+@media (max-width: 786px) {
+  .services {
+    display: flex;
+    flex-direction: column;
+  }
 }
