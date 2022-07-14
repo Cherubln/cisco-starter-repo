@@ -49,9 +49,6 @@ body {
   text-align: center;
   text-transform: uppercase;
 }
-.service-content {
-  margin: 0.625em;
-}
 
 @media (max-width: 786px) {
   .services {
@@ -59,13 +56,14 @@ body {
     flex-direction: column;
   }
 }
-.ip-container {
+.ip-container,
+.latency-container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   margin: 0.75em;
 }
-.ip-address {
+.ip-address,
+.latency-address {
   padding: 0.625em;
   border-radius: 10px;
   background-color: var(--primary-color);
@@ -73,4 +71,9 @@ body {
   font-size: 0.85em;
   font-style: italic;
   font-weight: bold;
+  margin-left: auto;
+}
+.ip-label,
+.latency-label {
+  text-transform: capitalize;
 }

@@ -5,7 +5,7 @@ function SingleService({ name, children }) {
     <div className="service">
       <h3 className="service-title">{name}</h3>
       <ShowLatency />
-      <div className="service-content">{children}</div>
+      <div>{children}</div>
     </div>
   );
 }

@@ -1,16 +1,19 @@
-import { useEffect } from "react";
-import { w3cwebsocket } from "websocket";
+import { useEffect, useState } from "react";
+import ws from "../../socketConfig";
 
-const ws = new w3cwebsocket("ws://localhost:55455");
 export default function StreamData() {
-  useEffect(() => {
-    ws.onopen = () => {
-      console.log("WebSocket ws Connected");
-    };
+  const [latency, setLatency] = useState(0);
 
+  useEffect(() => {
     ws.onmessage = (message) => {
-      console.log(message);
+      const currentTime = new Date().getTime();
+      setLatency(currentTime - message.data);
     };
   });
-  return <div>Websockets here!</div>;
+  return (
+    <div className="latency-container">
+      <div className="latency-label">packet latency(milliseconds): </div>
+      <div className="latency-address">{latency}</div>
+    </div>
+  );
 }
